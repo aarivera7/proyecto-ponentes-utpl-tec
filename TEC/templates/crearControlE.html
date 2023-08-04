@@ -1,0 +1,44 @@
+{% extends "master.html" %}
+
+{% block content %}
+{% load static %}
+<h2>Crear Evento</h2>
+
+<div class="form">
+  <form action="" method="post">
+    {% csrf_token %}
+    {{formulario.as_p}}
+    <p><a href="" class="white_button">Generar con Inteligencia Artificial <i class="fa-solid fa-brain"></i></a></p>
+    <p>
+      <label for="description">Descripción: </label>
+      <input type="text" id="description">
+    </p>
+    <p>
+      <a href="" class="white_button">Base de Datos interna <i class="fa-solid fa-database"></i></a>
+      <a href="" class="white_button">Buscar en Linkedin <i class="fa-brands fa-linkedin"></i></a>
+    </p>
+    <p>
+      <label for="ponentes">Busqueda de Ponentes: </label>
+      <input type="text" id="ponentes">
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Area</th>
+          <th>Calificación</th>
+          <th>Foto</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>Jandry Jaramillo</td>
+        <td>Bajar de Peso</td>
+        <td>0</td>
+        <td><img src="{% static 'images/sin_foto.png' %}" alt="Perfil" class="img_profile"></td>
+      </tr>
+    </table>
+    <p><input type='submit' value='Agregar' class="green_button green_button--big" /></p>
+  </form>
+</div>
+
+{% endblock %}

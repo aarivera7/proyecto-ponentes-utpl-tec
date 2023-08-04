@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width" />
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+  <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+  <title>
+    {% block title %}
+    {% endblock %}
+  </title>
+</head>
+
+<body>
+    <aside class="sidebar active" id="sidebar">
+      <div class="close-btn" id="toggle-sidebar-btn"><span>&#9776;</span></div>
+      <a href="https://tec.utpl.edu.ec/">
+          <img src="{% static '/images/logo.png' %}" alt="UTPL TEC">
+      </a>
+      <p class="sidebar__p">Adrián Rivera</p>
+      <p class="sidebar__p--normal">Administrador</p>
+      <a href="{% url 'crearControlE' %}" class="sidebar__a--button"> <i class="fa-solid fa-plus"></i> Nuevo Evento</a>
+      <a href=""><b>Ponentes</b></a>      
+      <a href="{% url 'ponentes' %}"><i class="fa-solid fa-user"></i>  Ver ponentes</a>    
+      <a href="{% url 'crearExpositoresCon' %}"><i class="fa-solid fa-user-plus"></i>  Registrar ponentes</a>    
+      <a href="{% url 'ponentes' %}"><i class="fa-brands fa-linkedin"></i> LinkenIn</a>   
+      <br>
+      <a href=""><b>Eventos</b></a>      
+      <a href="{% url 'index' %}"><i class="fa-regular fa-calendar-days"></i>  Ver eventos</a>
+      <a href="{% url 'crearControlE' %}"><i class="fa-solid fa-plus"></i></i>  Añadir Evento</a>
+      <a href="{% url 'estadisticas' %}"><i class="fa-solid fa-chart-line"></i>  Ver estádisticas</a>
+      <br>  
+      <a href=""><i class="fa-solid fa-key"></i> Cambiar Contraseña</a>
+      <a href="https://tec.utpl.edu.ec/"><i class="fa-solid fa-right-from-bracket"></i>  Cerrar sesión</a>
+  </aside>
+  <header>
+    <img src="{% static 'images/fake.png' %}" height="32px" width="100%" alt="My image">
+    <div>
+      <img src="{% static 'images/logo.png' %}" height="55px" width="85px" class="logo" alt="UTPL TEC">
+      <nav class="top_menu">
+        <ul>
+          <li><a href="{% url 'index' %}">Inicio</a></li>
+          <li><a href="{% url 'crearConsecionaria' %}">UTPL TEC</a></li>
+          <li><a href="{% url 'ponentes' %}">Oferta Académica</a></li>
+          <li><a href="{% url 'ponentes' %}">Observatorio</a></li>
+          <li><a href="{% url 'ponentes' %}">Noticias</a></li>
+          <li><a href="{% url 'ponentes' %}">Contactos</a></li>
+          <li><a href="{% url 'ponentes' %}">Eventos y Cursos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="info-wrapper layout1">
+    <div class="contacto">
+
+      <section>
+        {% block content %}
+        {% endblock %}
+      </section>
+    </div>
+  </div>
+  <footer>
+    <div>
+      <img src="{% static 'images/foteer.png' %}" height="90px"  alt="My image">
+      <nav class="bottom_menu">
+        <ul>
+          <li><a href="{% url 'index' %}">Inicio</a></li>
+          <li><a href="{% url 'crearConsecionaria' %}">UTPL TEC</a></li>
+          <li><a href="{% url 'ponentes' %}">Oferta Académica</a></li>
+          <li><a href="{% url 'ponentes' %}">Observatorio</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div>
+      <div>
+        <p>Copyright 2023 UTPL Loja-Ecuador</p>
+      </div>
+      <div class="redes_sociales">
+        <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.linkedin.com"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://www.linkedin.com"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+  </footer>
+</body>
+<script src="{% static 'scripts/home.js' %}" charset="UTF-8"></script>
+</html>

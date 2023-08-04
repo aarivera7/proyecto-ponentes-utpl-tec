@@ -1,0 +1,20 @@
+{% extends "master.html" %}
+{% load static %}
+{% block content %}
+<div class="event_control">
+  <br>
+  <h2>Añadir Expositor</h2>
+  <img src="{% static 'images/sin_foto.png' %}" alt="Perfil" class="img_profile">
+  <a href="" class="green_button green_button--big">Añadir Foto</a>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{formulario.as_p}}
+    <p>
+      <label for="linkedin">URL del perfíl de LinkedIn <i class="fa-brands fa-linkedin"></i></label>
+      <input type="url">
+    </p>
+    <p><input type='submit' value='Agregar' class="green_button green_button--big"/></p>
+  </form>
+</div>
+
+{% endblock %}

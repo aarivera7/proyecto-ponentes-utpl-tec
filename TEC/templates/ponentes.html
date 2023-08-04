@@ -1,0 +1,131 @@
+{% extends "master.html" %}
+
+{% block title %}
+Listado de Ponentes
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<div class="event_control">
+  <h2>Ponentes Vistos Recientemente <i class="fa-brands fa-linkedin"></i></h2>  
+  <br>
+  <div class="ponentes">
+    <div>
+      <p><b>Emmanuel Correa</b></p>
+      <p>Cultura Inca</p>
+      <p><small>Cuzco</small></p>
+      <img src="{% static 'images/foto1.jpg' %}" alt="Perfil" class="img_profile">
+      <p><a href="" class="green_button green_button--big">Contactar <i class="fa-brands fa-linkedin"></i></a></p>
+    </div>
+    <div>
+      <p><b>María Jaramillo</b></p>
+      <p>Minería</p>
+      <p><small>Johannesburgo</small></p>
+      <img src="{% static 'images/foto2.jpg' %}" alt="Perfil" class="img_profile">
+      <p><a href="" class="green_button green_button--big">Contactar <i class="fa-brands fa-linkedin"></i></a></p>
+    </div>
+    <div>
+      <p><b>Valentina Correa</b></p>
+      <p>Dirección de Empresas</p>
+      <p><small>Cuenca</small></p>
+      <img src="{% static 'images/foto3.jpg' %}" alt="Perfil" class="img_profile">
+      <p><a href="" class="green_button green_button--big">Contactar <i class="fa-brands fa-linkedin"></i></a></p>
+    </div>
+    <div>
+      <p><b>Renato Gaona</b></p>
+      <p>Comercio Exterior</p>
+      <p><small>Piura</small></p>
+      <img src="{% static 'images/foto4.jpg' %}" alt="Perfil" class="img_profile">
+      <p><a href="" class="green_button green_button--big">Contactar <i class="fa-brands fa-linkedin"></i></a></p>
+    </div>
+    <div>
+      <p><b>Carolina Espinoza</b></p>
+      <p>Marketing</p>
+      <p><small>Loja</small></p>
+      <img src="{% static 'images/1.png' %}" alt="Perfil" class="img_profile">
+      <p><a href="" class="green_button green_button--big">Contactar <i class="fa-brands fa-linkedin"></i></a></p>
+    </div>
+    <div>
+      <p><b>Pamela Peñarreta</b></p>
+      <p>Comunicación</p>
+      <p><small>Loja</small></p>
+      <img src="{% static 'images/2.jpeg' %}" alt="Perfil" class="img_profile">
+      <p><a href="https://ec.linkedin.com/in/pamela-pe%C3%B1arreta-78838a218" class="green_button green_button--big">Contactar <i class="fa-brands fa-linkedin"></i></a></p>
+    </div>
+  </div>
+
+  <h2>Buscador De Ponentes</h2>
+  <p><b>Ubicación: </b><a href="">Ecuador</a></p>
+  <a href="{% url 'crearExpositoresCon' %}" class="green_button button_expositor green_button--big">Ingresar Nuevo Expositor <i class="fa-solid fa-user-plus"></i> </a> 
+  <hr>
+
+  <table id="tabla_datos3">
+
+    <thead>
+      <tr>
+        <th>Nombres</th>
+        <th>Area</th>
+        <th>Localidad</th>
+        <th>Foto</th>
+        <th>URL</i></th>
+      </tr>
+    </thead>
+
+    {% for e in ponentes %}
+    <tr>
+      <td> {{e.nombres}} </td>
+      <td> {{e.area}} </td>
+      <td> {{e.localidad}} </td>
+      <td><img src="{{ e.foto.url }}" alt="{{ e.nombres }}'s Photo" width="100"></td>
+      <td><a href="https://ec.linkedin.com/in/lissetneyra?trk=public_profile_browsemap" class="green_button green_button--big">Contactar <i class="fa-brands fa-linkedin"></i></a></td>
+    </tr>
+    {% endfor %}
+  </table>
+  
+  <h2>Ponentes Conocidos</h2>
+
+  <table id="tabla_datos2">
+
+    <thead>
+      <tr>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Conocimientos y Aptitudes</th>
+        <th>N° eventos</th>
+        <th>Calificación</th>
+        <th>Presupuesto</th>
+        <th>Correo</th>
+        <th>Teléfono</th>
+        <th>Ciudad</th>
+        <th><i class="fa-solid fa-envelope"></i></th>
+        <th><i class="fa-solid fa-chart-simple"></i></th>
+      </tr>
+    </thead>
+
+    {% for e in expoC %}
+    <tr>
+      <td> {{e.nombres}} </td>
+      <td> {{e.apellidos}} </td>
+      <td> {{e.conocimientos}} </td>
+      <td> {{e.numEventos}} </td>
+      <td> {{e.calificacion}} </td>
+      <td> {{e.presupuesto}} </td>
+      <td> {{e.correo}} </td>
+      <td> {{e.telefono}} </td>
+      <td> {{e.ciudad}} </td>
+      <td>{# e.contacto #}<a href="mailto:jjjaramillo20@utpl.edu.ec" class="green_button green_button--small"><i class="fa-solid fa-envelope"></i></a></td>
+      <td><a href="{% url 'estadisticas' %}" class="green_button green_button--small"><i class="fa-solid fa-chart-simple"></i></a></td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <p>Actualizado a: {% now "j F Y H:i" %}</p>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#tabla_datos2').DataTable();
+      $('#tabla_datos3').DataTable();
+    });
+  </script>
+</div>
+{% endblock %}

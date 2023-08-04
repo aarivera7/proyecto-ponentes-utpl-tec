@@ -1,0 +1,264 @@
+/* Variables */
+:root{
+  --primary-color: #33265F;
+  --secondary-color: #CADA2A;
+}
+/* manejo de las características de la etiqueta body*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+h2{
+  margin: 20px;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif, Arial, Helvetica;
+  background: #FEFEFD;
+}
+
+/* Estilos para el sidebar */
+.sidebar {
+  height: 100%;
+  width: 185px;
+  position: fixed;
+  background-color: black;
+  padding-top: 60px;
+  transition: all 100ms linear;
+  left: -200px; /* Ocultar sidebar en dispositivos móviles */
+}
+.sidebar a {
+  padding: 8px 8px 8px 20px;
+  text-decoration: none;
+  font-size: 12px;
+  color: #CECDCE;
+  display: block;
+}
+.sidebar a:hover {
+  background-color: #404040;
+}
+.sidebar .close-btn {
+  position: absolute;
+  top: 50px;
+  left: 200px;
+  font-size: 2.4rem;
+  cursor: pointer;
+}
+.sidebar .close-btn span {
+  display: block;
+}
+.sidebar.active {
+  left: 0;
+}
+.sidebar__a--button {
+  background-color: var(--primary-color) !important;
+  padding: 7px 15px !important;
+  border-radius: 15px !important;
+  margin: 5px 15px;
+  font-size: 15px !important;
+  font-weight: bold;
+  color: white !important;
+}
+.sidebar__p {
+  color: white;
+  padding: 0 40px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.sidebar__p--normal {
+  color: white;
+  padding: 0 40px;
+  margin-bottom: 10px;
+}
+
+header {
+  /*background: #034275;*/
+  background: #33265F;
+  color: #FFF;
+  height: 150px;
+}
+
+header div {
+  display: flex;
+  align-items: center;
+}
+
+.logo{
+  margin-top: 30px;
+  margin-left: 60px;
+}
+/* manejo de las características de la etiqueta table*/
+
+section {
+  width: 100%;
+  height: auto;
+}
+
+th, td {
+  padding: 15px;
+  border-bottom: 1px solid black;
+  font-size: 12px;
+}
+
+tr:hover {
+  background-color: #258EAD;
+}
+
+input[type=text], input[type=url], input[type=search] {
+  padding: 5px 5px;
+  width: 600px;
+}
+
+input[type=text]:focus, input[type=number]:focus {
+  border: 3px solid blue;
+}
+
+label {
+  padding: 12px 10px;
+}
+/* manejo de las características de las clases*/
+
+.colorceldsprintfa{
+  background: #fdfdfd;
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.miformulario{
+  width: 40%;
+}
+
+
+/*Menu */
+/*
+ Tomado de http://codigoprogramacion.com/cursos/html/como-hacer-un-menu-horizontal-con-html5-y-css3.html
+ */
+.top_menu ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 40px;
+}
+
+ .top_menu ul li
+{
+  text-decoration: none;
+  list-style: none;
+  margin: 0 35px;
+}
+
+.top_menu ul li a
+{  
+  color: white;
+  text-decoration: none;
+}
+
+footer{
+  background: #33265F;
+  color: #FFF;
+  padding: 20px;
+  
+}
+
+footer div {
+  margin: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.bottom_menu ul li {
+  text-decoration: none;
+  list-style: none;
+  margin: 0 10px;
+}
+
+.bottom_menu ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.bottom_menu ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.green_button {
+  background-color: #D9ED82;
+  color: #0E3D4D;
+  text-decoration: none;
+  border-radius: 20px;
+  display: inline-block;
+  width: auto;
+}
+
+.green_button--big {
+  padding: 9px 28px;
+  margin: 20px;
+  font-weight: bold;
+}
+
+.green_button--small {
+  padding: 7px 20px;
+}
+.white_button {
+  border: black;
+  border-radius: 20px;
+  padding: 9px 30px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  width: auto;
+}
+
+.button_event{
+  width: 200px;
+}
+
+.button_expositor {
+  width: 285px
+}
+
+/*control de eventos */
+.event_control {
+  margin: 0 50px 10px 220px;
+}
+.form {
+  display: flex;
+  justify-content: space-around;
+}
+form p label {
+  display: inline-block;
+  width: 200px;
+}
+
+.img_profile {
+  width: 150px;
+  height: 150px;
+  border-radius: 80px;
+  margin: 10px;
+}
+
+.ponentes{
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+}
+
+.row_graphic {
+  display: flex;
+  justify-content: space-around;
+}
+
+.redes_sociales {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+
+.redes_sociales a {
+  display: inline-block;
+  font-size: 20px;
+}

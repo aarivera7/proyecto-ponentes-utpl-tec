@@ -1,0 +1,58 @@
+{% extends "master.html" %}
+
+{% block title %}
+Listado de Concesionarias
+{% endblock %}
+
+{% block content %}
+<div class="event_control">
+  <h2>Control de Eventos</h2>
+
+  <a href="{% url 'crearControlE' %}" class="green_button button_event green_button--big"> <i class="fa-solid fa-plus"></i> Nuevo Evento</a> 
+  <p>Actualizado a: {% now "j F Y H:i" %}</p>
+  <br>
+  <table id="tabla_datos">
+
+    <thead>
+      <tr>
+        <th>Clasificación</th>
+        <th>Tipo de Evento</th>
+        <th>Fecha</th>
+        <th>Mes</th>
+        <th>Expositor</th>      
+        <th>Carrera</th>
+        <th>Tema</th>
+        <th>Metodología</th>
+        <th>Lugar</th>
+        <th>Público</th>
+        <th>Reporte asistentes</th>
+        <th><i class="fa-solid fa-chart-simple"></i></th>
+        <th><i class="fa-solid fa-pen-to-square"></i></th>
+      </tr>
+    </thead>
+
+    {% for c in control %}
+    <tr>
+      <td> {{c.clasificacion}} </td>
+      <td> {{c.tipo}} </td>
+      <td> {{c.fecha}} </td>
+      <td> {{c.mes}} </td>
+      <td> {{c.expositor}} </td>
+      <td> {{c.carrera}} </td>
+      <td> {{c.tema}}</td>
+      <td>{{c.metodologia}}</td>
+      <td>{{c.lugar}}</td>
+      <td> {{c.publico}} </td>
+      <td> {{c.reporte}} </td>
+      <td><a href="{% url 'estadisticas' %}" class="green_button green_button--small"><i class="fa-solid fa-chart-simple"></i></a></td>
+      <td><a href="{% url 'crearExpositoresCon' %}" class="green_button green_button--small"><i class="fa-solid fa-pen-to-square"></a></i></td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#tabla_datos').DataTable();
+    });
+  </script>
+{% endblock %}

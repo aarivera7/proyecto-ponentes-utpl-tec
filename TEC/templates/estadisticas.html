@@ -1,0 +1,19 @@
+{% extends "master.html" %}
+
+{% block content %}
+{% load static %}
+<div class="event_control">
+  <h2>Estádisticas de eventos</h2>
+  <div class="row_graphic">
+    <img src="{% static 'images/graficas3.png' %}" alt="">
+    <img src="{% static 'images/graficas4.png' %}" alt="">
+  </div>
+  <div class="row_graphic">
+    <img src="{% static 'images/graficas1.png' %}" alt="">
+    <img src="{% static 'images/graficas2.png' %}" alt="">
+  </div>
+  <br>
+  <p>Actualizado a: {% now "j F Y H:i" %}</p>
+</div>
+
+{% endblock %}
